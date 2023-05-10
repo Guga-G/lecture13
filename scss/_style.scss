@@ -1,0 +1,149 @@
+header {
+    max-width: 1360px;
+    width: 100%;
+    height: 81px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+    .mycontainer {
+        height: 100%;
+        @include mycontainer;
+        @media (max-width: 1225px) {
+        }
+    }
+    nav {
+        max-width: 705px;
+        height: 20px;
+        @media (max-width: 1225px) {
+            display: none;
+        }
+        ul {
+            @include goflex;
+            gap: 47px;
+            a {
+                font-family: "Raleway", sans-serif;
+                font-size: 16px;
+                line-height: 37px;
+                color: #303134;
+                opacity: 1;
+                &:hover {
+                    background-color: aquamarine;
+                    border-radius: 10px;
+                    padding: 4px;
+                }
+            }
+        }
+    }
+}
+
+.fa-bars {
+    font-size: 36px;
+    display: none;
+    @media (max-width: 1225px) {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+// section 1
+
+.s-1 {
+    background-image: url("../images/Clip.png");
+    max-width: 1360px;
+    width: 100%;
+    height: 569px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 35px;
+    @media (max-width: 1360px) {
+        width: 90%;
+    }
+    h1 {
+        font-family: "Arial", sans-serif;
+        font-size: 78px;
+        line-height: 52px;
+        color: white;
+        line-height: 53px;
+    }
+    h2 {
+        font-family: "Raleway", sans-serif;
+        font-size: 18px;
+        line-height: 37px;
+        color: white;
+        text-align: center;
+        line-height: 37px;
+    }
+}
+
+// section 2
+
+.s-2 {
+    margin: 0 auto;
+    .mys2container {
+        @include mys2container;
+
+        .card1 {
+            @include mycards(column, 241px);
+            h1 {
+                font-family: $myfont1;
+                color: $mycolor1;
+                font-size: 16px;
+                line-height: 37px;
+            }
+            h2 {
+                font-family: $myfont1;
+                color: $mycolor2;
+                font-size: 25px;
+                line-height: 37px;
+                margin-bottom: 29px;
+            }
+            h3 {
+                font-family: $myfont1;
+                color: $mycolor1;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 22px;
+                width: 241px;
+                height: 145px;
+            }
+        }
+        .mycardcontainer {
+            @include mycardcontainer;
+            .card2 {
+                @include mycards(column, 270px);
+                @media (max-width: 1360px) {
+                    @include mycards(column, 320px);
+                }
+            }
+            .card2 img {
+                @extend %mycardimages;
+                @media (max-width: 1360px) {
+                    max-width: 320px;
+                }
+            }
+            .card2 {
+                h1 {
+                    font-family: $myfont1;
+                    color: $mycolor2;
+                    @include myh1;
+                }
+                h2 {
+                    font-family: $myfont1;
+                    color: $mycolor1;
+                    @include myh2;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    max-width: 1360px;
+    width: 100%;
+    height: 81px;
+    margin: 0 auto;
+}
